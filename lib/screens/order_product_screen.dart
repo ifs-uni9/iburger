@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iBurger/widgets/list_item_widget.dart';
 
 class OrderProductScreen extends StatefulWidget {
   const OrderProductScreen({Key? key}) : super(key: key);
@@ -53,10 +54,10 @@ class _OrderProductScreenState extends State<OrderProductScreen> {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     elevation: 0,
-                    primary: Color(0xffff9f0a),
+                    primary: Colors.green,
                   ),
                   onPressed: () {},
-                  child: Text('ADICIONAR'),
+                  child: Text('CONFIRMAR'),
                 ),
               ],
             ),
@@ -66,11 +67,90 @@ class _OrderProductScreenState extends State<OrderProductScreen> {
       appBar: AppBar(
         title: Text('Voltar'),
       ),
-      body: SafeArea(
-        minimum: EdgeInsets.symmetric(
-          horizontal: 20,
+      body: SingleChildScrollView(
+        child: SafeArea(
+          minimum: EdgeInsets.symmetric(
+            horizontal: 20,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          width: 0.2,
+                          color: const Color(0xFFFFFFFF),
+                        ),
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(40),
+                        child: Text(
+                          '12',
+                          style: TextStyle(fontSize: 48),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: ListItemWidget(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/product-details');
+                  },
+                  image: 'assets/images/logo.png',
+                  title: 'Burger Name',
+                  description:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: ListItemWidget(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/product-details');
+                  },
+                  image: 'assets/images/logo.png',
+                  title: 'Burger Name',
+                  description:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: ListItemWidget(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/product-details');
+                  },
+                  image: 'assets/images/logo.png',
+                  title: 'Burger Name',
+                  description:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: ListItemWidget(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/product-details');
+                  },
+                  image: 'assets/images/logo.png',
+                  title: 'Burger Name',
+                  description:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+                ),
+              ),
+            ],
+          ),
         ),
-        child: Container(),
       ),
     );
   }

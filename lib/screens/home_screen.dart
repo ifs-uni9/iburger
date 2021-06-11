@@ -58,7 +58,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisCount: 2,
                   children: [
                     MenuItemWidget(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/order');
+                      },
                       iconData: Icons.assignment,
                       iconColor: Color(0xff1c1c1e),
                       label: 'Comanda',
