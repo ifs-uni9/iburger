@@ -12,6 +12,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   bool isExitAction = false;
 
+  void _onCancelPressed() {
+    Navigator.of(context).pop();
+  }
+
+  void _onLeavePressed() {
+    SystemNavigator.pop();
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -24,15 +32,8 @@ class _HomeScreenState extends State<HomeScreen> {
               content: Text('Se você sair perderá todo progresso feito.'),
               actions: [
                 TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text('Cancelar')),
-                TextButton(
-                    onPressed: () {
-                      SystemNavigator.pop();
-                    },
-                    child: Text('Sair')),
+                    onPressed: _onCancelPressed, child: Text('Cancelar')),
+                TextButton(onPressed: _onLeavePressed, child: Text('Sair')),
               ],
             );
           },
@@ -107,14 +108,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   'Se você sair perderá todo progresso feito.'),
                               actions: [
                                 TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
+                                    onPressed: _onCancelPressed,
                                     child: Text('Cancelar')),
                                 TextButton(
-                                    onPressed: () {
-                                      SystemNavigator.pop();
-                                    },
+                                    onPressed: _onLeavePressed,
                                     child: Text('Sair')),
                               ],
                             );
